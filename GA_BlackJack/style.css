@@ -1,0 +1,43 @@
+h1 {
+  text-align: center;
+  font-family: 'Old Standard TT', serif;
+  color: white;
+}
+
+.container-fluid {
+  background: -webkit-radial-gradient(lightgreen, green);
+  font-family: 'Old Standard TT', serif;
+}
+
+footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: 'Old Standard TT', serif;
+
+}
+
+.startDeal {
+  margin: 20px;
+}
+
+.newGame {
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
+
+#player1Score {
+  margin-top: 10px;
+}
+
+#player2Score {
+  margin-top: 10px;
+}
+
+#inputs1 {
+  margin-top: 100px;
+}
+
+#inputs2 {
+  margin-top: 100px;
+}
