@@ -297,11 +297,11 @@ var dealerTurn = function(dealerValue) {
       hitValue = 1;
     } else if (hitValue > 10) {
       hitValue = 10;
-      console.log(hitValue);
+      
     }
     // adds total value of dealers card to new card
     dealerValue += parseInt(hitValue);
-    console.log(dealerValue);
+    
     var newCardSuit = $('<p class="newP">' + cardName + " of " + assignSuit() + '</p>');
     newCardSuit.appendTo('#dealer');
     
@@ -310,14 +310,14 @@ var dealerTurn = function(dealerValue) {
       $("#dealerTotal").val(dealerValue);
       dealerTurn(dealerValue);
 
-      console.log(dealerValue);
+      
     } else if(dealerValue >= 17 && dealerValue <= 21){
       
       $("#dealerTotal").val(dealerValue);
-      console.log(dealerValue);
+      
     } else if(dealerValue >= 22){
       
-      console.log(dealerValue);
+      
       $("#dealerTotal").val(dealerValue);
       alert("Dealer Busted!");
       if(document.getElementById("totalValue1").value !== "Player 1 Busted!") {
@@ -325,7 +325,6 @@ var dealerTurn = function(dealerValue) {
         playerScore1 ++;
         $("#player1Score").val(playerScore1);
       } else if(document.getElementById("totalValue1").innerHTML === "Player 1 Busted!") {
-        console.log(document.getElementById("totalValue1").innerHTML === "Player 1 Busted!");
         alert("Dealer beats Player 1!");
       };
       if(document.getElementById("totalValue2").value !== "Player 2 Busted!") {
