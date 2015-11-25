@@ -7,6 +7,7 @@ h1 {
 .container-fluid {
   background: -webkit-radial-gradient(lightgreen, green);
   font-family: 'Old Standard TT', serif;
+  font-size: 18px;
 }
 
 footer {
@@ -14,6 +15,8 @@ footer {
   background-color: black;
   color: white;
   font-family: 'Old Standard TT', serif;
+  font-size: 10px;
+  line-height: 30px;
 
 }
 
@@ -22,16 +25,16 @@ footer {
 }
 
 .newGame {
-  margin-top: 200px;
+  margin-top: 150px;
   margin-bottom: 20px;
 }
 
 #player1Score {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 #player2Score {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 #inputs1 {
@@ -40,4 +43,17 @@ footer {
 
 #inputs2 {
   margin-top: 100px;
+}
+
+#cards1 {
+  height: 100px;
+}
+
+#cards2 {
+  height: 100px;
+}
+
+#dealer {
+  height: 120px;
+  margin: 20px;
 }
