@@ -5,6 +5,7 @@ $(document).ready(function() {
   $('.stand2').attr("disabled", true);
   $('.hit2').attr("disabled", true);
 
+});
 // variables
 
 var counter = 0;
@@ -48,7 +49,7 @@ var shuffle = function() {
 
 //creates a random number that will be applied to determine suit of card
 var suit = function() {
-  suitResults = Math.floor((Math.random() * 3) + 1);
+  suitResults = Math.floor((Math.random() * 4) + 1);
   return suitResults;
 };
 
@@ -376,7 +377,7 @@ var gameOver2 = function() {
   }
 };
 
-});
+
 
 
 
