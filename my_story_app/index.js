@@ -36,5 +36,7 @@ app.use(function(req,res,next){
 //controllers
 app.use('/', require('./controllers/index'));
 app.use('/auth', require('./controllers/auth'));
+app.use('/profiles', require('./controllers/profiles'));
+app.use('/myaccount', require('./controllers/myaccount'));
 
 app.listen(process.env.PORT || 3000);

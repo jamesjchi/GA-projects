@@ -3,19 +3,17 @@ var db = require('../models');
 var router = express.Router();
 
 router.route('/signup')
-  .get(function(req, res) {
-    res.render('auth/signup');
-  })
   .post(function(req, res) {
     if (req.body.password != req.body.password2) {
       req.flash('danger', 'Passwords do not match');
-      res.redirect('/auth/signup');
+      res.redirect('/');
     } else {
       db.user.findOrCreate({
         where: {email: req.body.email},
         defaults: {
           password: req.body.password,
-          name: req.body.name
+          firstName: req.body.firstName,
+          lastName: req.body.lastName
         }
       }).spread(function(user, created) {
         if (created) {
@@ -24,19 +22,16 @@ router.route('/signup')
           res.redirect('/');
         } else {
           req.flash('danger', 'A user with that e-mail address already exists.');
-          res.redirect('/auth/signup');
+          res.redirect('/');
         }
       }).catch(function(err) {
         req.flash('danger','Error');
-        res.redirect('/auth/signup');
+        res.redirect('/');
       });
     }
   });
 
 router.route('/login')
-  .get(function(req, res) {
-    res.render('auth/login');
-  })
   .post(function(req, res) {
     db.user.authenticate(req.body.email, req.body.password, function(err, user) {
       if (err) {
@@ -47,7 +42,7 @@ router.route('/login')
         res.redirect('/');
       } else {
         req.flash('danger', 'Invalid username or password');
-        res.redirect('/auth/login');
+        res.redirect('/');
       }
     });
   });
