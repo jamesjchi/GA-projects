@@ -1,0 +1,21 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    Name: <%= profile.firstname + ' ' + profile.lastname %>
+    
+    <button type="button" class="btn btn-danger delete-btn pull-right" data-profile-id="<%= profile.id %>">Delete</button>
+</div>
+
+<div class="container">
+  <h2>Edit Profile</h2>
+  <form action="/editProfile" id="update-form">
+    <input type="hidden" name="id" value="<%= profile.id %>">
+    First Name: <input type="text" name="firstname" value="<%= profile.firstname %>">
+    Last Name: <input type="text" name="lastname" value="<%= profile.lastname %>">
+    Image: <input type="image" name="image" value="<%= profile.image %>">
+    Info: <input type="info" name="info" value="<%= profile.info %>">
+    <input type="submit">
+  </form>
+</div>
+
+<% include partials/footer.ejs %>

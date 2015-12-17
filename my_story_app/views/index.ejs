@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Story</title>
+  <title>Story Matters</title>
   <script src="//code.jquery.com/jquery.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -25,18 +26,29 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="#howItWorks">How It Works</a></li>
+        <li><a data-scroll href="#howItWorks">How It Works</a></li>
         <li><a href="#whyGive">Why Give?</a></li>
-        <li><a href="#">Profiles</a></li>
+        <li><a href="/profiles">Profiles</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if(!currentUser){ %>      
         <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login">Login</button>
         <li role="separator" class="divider"></li>
         <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#signUp">Sign Up</button>
+      <% } else if(currentUser.email == 'email@email.com') { %>
+        <form method="GET" action="/auth/logout">
+          <p class="navbar-text">Hi <%= currentUser.firstName %></p>
+          <a href="/admin" class="btn btn-default navbar-btn
+        " role="button">Add Profile</a>
+          <a href="/myaccount" class="btn btn-default navbar-btn
+        " role="button">Your Account</a>
+          <button type="submit" class="btn btn-default navbar-btn">Logout</button>
+        </form>
       <% } else { %>
         <form method="GET" action="/auth/logout">
           <p class="navbar-text">Hi <%= currentUser.firstName %></p>
+          <a href="/myaccount" class="btn btn-default navbar-btn
+        " role="button">Your Account</a>
           <button type="submit" class="btn btn-default navbar-btn">Logout</button>
         </form>
         <% } %>
@@ -133,23 +145,23 @@
       <div class="carousel-caption">
         <h3>Heather Chen</h3>
         <p>“We’d been at the shelter for just a few days when he showed up. He tracked me using the GPS on my phone. The shelter has two sets of sliding doors for security. You walk through the first door, it closes behind you, and the second door opens. He jumped inside just as the first door was closing. The kids started screaming. He pushed me to the ground. While the security was dragging him away, he was screaming that I’d stolen his children. And that everything was my fault. And it made me feel guilty. He always knew how to make me feel guilty.”</p><br>
-        <button type="submit" class="btn btn-primary">Hear More</button>
+        <a href='/person/4' class="btn btn-primary" id="homeButton">Hear More</a>
       </div>
     </div>
     <div class="item">
-      <img src="http://i.imgur.com/TdDWSzj.jpg?1" width="100%">
+      <img src="http://i.imgur.com/TdDWSzj.jpg?2" width="100%">
       <div class="carousel-caption">
         <h3>Thomas Mueller</h3>
-        <p>“I’m thirty-three. I haven’t been on screen in over a year. Right now I’m down to $50 in my bank account and I’ve got to make $1300 in the next three days just to pay the rent. There’s a lot of pressure on me right now. The only reason I’m sitting down is because I needed a break. I just finished pitching a woman about a spa package, and she talked to me for about ten minutes. I thought I was going to make a sale. But then she told me ‘no.’ Honestly, I felt like I was going to start crying. I had to sit down. Right now I feel like I’m an arrow that can’t be pulled back any further, and is about to be released. I feel like I’m heading toward greatness. Honestly, I have no choice but to believe that. The path has been so shitty. The only way I can make sense of the world is to believe it’s leading me somewhere.”</p>
-        <button type="submit" class="btn btn-primary">Hear More</button>
+        <p>“I’m thirty-three. I haven’t been on screen in over a year. Right now I’m down to $50 in my bank account and I’ve got to make $1300 in the next three days just to pay the rent. There’s a lot of pressure on me right now. The only reason I’m sitting down is because I needed a break. I just finished pitching a woman about a spa package, and she talked to me for about ten minutes. I thought I was going to make a sale. But then she told me ‘no.’ Honestly, I felt like I was going to start crying. I had to sit down. Right now I feel like I’m an arrow that can’t be pulled back any further, and is about to be released. I feel like I’m heading toward greatness. Honestly, I have no choice but to believe that. The path has been so shitty. The only way I can make sense of the world is to believe it’s leading me somewhere.”</p><br>
+        <a href='/person/5' class="btn btn-primary" id="homeButton">Hear More</a>
       </div>
     </div>
     <div class="item">
-      <img src="http://i.imgur.com/D5jvw88.jpg?2" width="100%">
+      <img src="http://i.imgur.com/D5jvw88.jpg?3" width="100%">
       <div class="carousel-caption">
         <h3>Michelle Tracy</h3>
-        <p>“I lost a baby at the end of May. I was just a little over two months into the pregnancy. I wasn’t showing or anything. And I hadn’t announced the pregnancy yet. So I don’t think that the baby seemed real to anyone else. But it was real to me. Every time I passed a children’s store, I’d look in the window and smile. I began to look closely at all the different types of strollers people were pushing down the street. I bought a little monkey for the baby that I carried around with me. I started planning our life together. Then one day it felt like someone was stabbing me in the lower abs. I went to the doctor, and they told me that I’d had an ectopic pregnancy, and the baby was lost. I felt really alone afterward because most of my friends hadn’t even known the baby existed. They couldn’t understand how I felt. Part of it was my fault. I didn’t want to talk about it. Yet I still expected everyone to understand.“</p>
-        <button type="submit" class="btn btn-primary">Hear More</button>
+        <p>“I lost a baby at the end of May. I was just a little over two months into the pregnancy. I wasn’t showing or anything. And I hadn’t announced the pregnancy yet. So I don’t think that the baby seemed real to anyone else. But it was real to me. Every time I passed a children’s store, I’d look in the window and smile. I began to look closely at all the different types of strollers people were pushing down the street. I bought a little monkey for the baby that I carried around with me. I started planning our life together. Then one day it felt like someone was stabbing me in the lower abs. I went to the doctor, and they told me that I’d had an ectopic pregnancy, and the baby was lost. I felt really alone afterward because most of my friends hadn’t even known the baby existed. They couldn’t understand how I felt. Part of it was my fault. I didn’t want to talk about it. Yet I still expected everyone to understand.“</p><br>
+        <a href='/person/6' class="btn btn-primary" id="homeButton">Hear More</a>
       </div>
     </div>
   </div>
@@ -164,32 +176,32 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="container text-center">
-  <A NAME="howItWorks"></A>
-  <h2>How it Works</h2><br>
+<div class="container text-center" id="howItWorks">
+  <a name="howItWorks"></a>
+  <h3 class="cinzel">HOW IT WORKS</h3><br><hr>
   <div class="col-md-4">
-    <h3>CHOOSE</h3>
-    <p>1. Choose a story you resonate with.</p><br><br>
+    <h3 class="cinzel">CHOOSE</h3>
+    <p>1. Set up an account and choose a local story you resonate with.</p><br>
     <i class="fa fa-hand-o-right fa-5x"></i>
   </div>
   <div class="col-md-4">
-    <h3>GIVE</h3>
-    <p>2. Set up an account and give to specific needs where 100% of your gift will be applied to someone in your local neighborhood.</p>
+    <h3 class="cinzel">GIVE</h3>
+    <p>2. Read more about them and give to specific needs where 100% of your gift will be applied.</p><br>
     <i class="fa fa-credit-card-alt fa-5x"></i>
   </div>
   <div class="col-md-4">
-    <h3>SEE</h3>
-    <p>3. Be able to track the outcomes and items you've given.</p><br>
+    <h3 class="cinzel">SEE</h3>
+    <p>3. Be able to track the outcomes and items you've given through your account.</p><br>
     <i class="fa fa-check-square-o fa-5x"></i>
   </div> 
 </div>
 
-<div class="container text-center">
-  <A NAME="whyGive"></A>
-  <h2>Why Give?</h2>
+<div class="container-fluid text-center" id="whyGive">
+  <a name="whyGive"></a>
+  <h3 class="cinzel">WHY GIVE?</h3>
 </div>
 
-<footer>
+  <footer>
     <nav class="navbar navbar-inverse navbar-static-bottom">
       <div class="container" id="footer">
         <p>Made with <i class="fa fa-heart"></i> by James Chi &copy; 2015</p>
@@ -197,6 +209,9 @@
     </nav>
   </footer>
 
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

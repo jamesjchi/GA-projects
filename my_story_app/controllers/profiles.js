@@ -2,7 +2,7 @@ var express = require('express');
 var db = require('../models');
 var router = express.Router();
 
-router.get('/profiles', function(req, res) {
+router.get('/', function(req, res) {
   res.render('profiles');
 });
 

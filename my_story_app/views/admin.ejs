@@ -1,0 +1,31 @@
+<% include partials/header.ejs %>
+
+<div class='container' id="add">
+  <h1 class='text-center'>Add Profile</h1>
+
+  <form method="POST" action="/admin/addProfile" class='text-center'>
+    <input type="text" name="firstname" placeholder="Enter First Name...">
+    <input type="text" name="lastname" placeholder="Enter Last Name...">
+    <input type="text" name="image" placeholder="Image">
+    <input type="text" name="info" placeholder="Info">
+    <input type="text" name="need" placeholder="Enter Need...">
+    <input type="text" name="cost" placeholder="Enter Cost...">
+    <input type="submit">
+  </form>
+</div>
+
+
+<div class="container" id="profile">
+  <h1 class="text-center">All Profiles</h1>
+  <% profiles.forEach(function(profiles) { %>
+  <ul class="list-unstyled">
+    <a href="<%= '/admin/editProfile/' + profiles.id %>"</a>
+    Name: <%= profiles.firstname + ' ' + profiles.lastname %>
+  </ul>
+  <% }); %>
+</div>
+
+
+
+<% include partials/footer.ejs %>
+

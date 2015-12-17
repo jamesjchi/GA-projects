@@ -1,8 +1,61 @@
 body { 
   padding-top: 71px; 
 }
+#homeButton {
+  margin-bottom: 15px;
+}
+
+#howItWorks {
+  padding-bottom: 100px;
+  padding-top: 40px;
+}
+
+#whyGive {
+  height: 400px;
+  width: 100%;
+  background-color: #F2E2DC;
+  padding-top: 40px;
+}
+
+#profilesBackground {
+  background-color: #F2E2DC;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0;
+}
+
+#myAccountBackground {
+  background-color: #F2E2DC;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#add {
+  padding-bottom: 100px;
+
+}
+.row-eq-height {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.userPic {
+  margin-left: 100px;
+}
+
+.cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.profileImage {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
 
 #footer {
+  padding-top: 15px;
   text-align: center;
   color: white;
 }

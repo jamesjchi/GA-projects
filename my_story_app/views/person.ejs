@@ -1,0 +1,23 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="thumbnail">
+      
+      <h2 class="text-center"><%= profile.firstname + ' ' + profile.lastname %></h2>
+      <img src="<%= profile.image %>" class="profileImage">
+      <p>"<%= profile.info %>"</p>
+
+      <h2 class="text-center">Needs</h2>
+
+      <div class="col-md-4">
+        <h3><%= needs.need %></h3>
+        <p>Cost: <%= needs.cost %></p>
+        <p class="text-center"><a class="btn btn-primary btn-lg" id="customButton" href="/person" role="button">Contribute</a></p>
+      </div>
+  
+    </div>
+  </div>
+</div>
+
+<% include partials/footer.ejs %>
