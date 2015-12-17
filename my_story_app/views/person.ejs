@@ -1,23 +1,23 @@
 <% include partials/header.ejs %>
 
 <div class="container">
-  <div class="jumbotron">
+  
     <div class="thumbnail">
-      
-      <h2 class="text-center"><%= profile.firstname + ' ' + profile.lastname %></h2>
       <img src="<%= profile.image %>" class="profileImage">
+      <h2 class="text-center"><%= profile.firstname + ' ' + profile.lastname %></h2>
       <p>"<%= profile.info %>"</p>
 
       <h2 class="text-center">Needs</h2>
 
-      <div class="col-md-4">
+      <% needs.forEach(function(needs, index) { %>
+      <div class="well">
         <h3><%= needs.need %></h3>
         <p>Cost: <%= needs.cost %></p>
-        <p class="text-center"><a class="btn btn-primary btn-lg" id="customButton" href="/person" role="button">Contribute</a></p>
+        <a class="btn btn-primary btn-lg pull-right" id="customButton" role="button">Contribute</a>
       </div>
-  
+      <% }); %>
     </div>
-  </div>
+  
 </div>
 
 <% include partials/footer.ejs %>

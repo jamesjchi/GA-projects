@@ -1,21 +1,36 @@
 <% include partials/header.ejs %>
 
-<div class="container">
+<div class="well">
     Name: <%= profile.firstname + ' ' + profile.lastname %>
     
     <button type="button" class="btn btn-danger delete-btn pull-right" data-profile-id="<%= profile.id %>">Delete</button>
 </div>
 
 <div class="container">
-  <h2>Edit Profile</h2>
-  <form action="/editProfile" id="update-form">
-    <input type="hidden" name="id" value="<%= profile.id %>">
-    First Name: <input type="text" name="firstname" value="<%= profile.firstname %>">
-    Last Name: <input type="text" name="lastname" value="<%= profile.lastname %>">
-    Image: <input type="image" name="image" value="<%= profile.image %>">
-    Info: <input type="info" name="info" value="<%= profile.info %>">
-    <input type="submit">
-  </form>
+  <div class="col-md-6">
+    <h2>Edit Profile</h2>
+    <form action="/editProfile" id="update-form">
+      <input type="hidden" name="id" value="<%= profile.id %>">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstname" value="<%= profile.firstname %>">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastname" value="<%= profile.lastname %>">
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="image" class="form-control" name="image" value="<%= profile.image %>">
+      </div>
+      <div class="form-group">
+        <label for="info">Info</label>
+        <input type="info" class="form-control" name="info" value="<%= profile.info %>">
+      </div>
+        <input type="submit" class="btn btn-default"value="Edit">
+      </div>
+    </form>
+  </div>
 </div>
 
 <% include partials/footer.ejs %>

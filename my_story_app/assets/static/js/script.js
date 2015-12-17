@@ -21,8 +21,8 @@ $('#customButton').on('click', function(e) {
   // Open Checkout with further options
   handler.open({
     name: 'Story Matters',
-    description: 'Childcare',
-    amount: 4000
+    description: '',
+    amount: 2000
   });
   e.preventDefault();
 });
@@ -58,15 +58,10 @@ $('.edit-btn').click(function(e) {
 });
 
 $('#update-form').submit(function(e) {
-
   e.preventDefault();
-
-  console.log(typeof($(this)));
 
   var myUrl = $(this).attr('action');
   var myData = $(this).serialize();
-
-  console.log(myUrl);
 
   $.ajax({
     method: 'GET',

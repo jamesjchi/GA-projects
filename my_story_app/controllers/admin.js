@@ -69,7 +69,8 @@ router.delete('/editProfile', function(req, res) {
   var id = req.body.id;
 
   db.profile.destroy({where: {id: id}}).then(function() {
-    // req.flash('success', 'You deleted a profile.');
+
+    req.flash('success', 'You deleted a profile.');
     res.status(200).send('Deleted User');
   });
 });
