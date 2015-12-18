@@ -3,9 +3,6 @@ $('.carousel').carousel({
   interval: 8000
 });
 
-// edit profile
-
-
 // stripe.api functions
 var handler = StripeCheckout.configure({
   key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
@@ -22,7 +19,7 @@ $('#customButton').on('click', function(e) {
   handler.open({
     name: 'Story Matters',
     description: '',
-    amount: 2000
+    amount: 5000
   });
   e.preventDefault();
 });
@@ -76,3 +73,14 @@ $('#update-form').submit(function(e) {
   });
 });
 
+// alternate button when not signed in
+$('#notButton').click(function(e) {
+  e.preventDefault();
+  swal({
+    title: 'Whoops!',
+    text: 'Please Log In or Sign Up',
+    type: 'error'
+    
+  });
+    
+});

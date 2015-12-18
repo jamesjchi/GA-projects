@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
   <link rel="stylesheet" href="/css/styles.css">
   <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
 </head>
@@ -26,7 +27,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="/#howItWorks">How It Works</a></li>
+        <li><a href="/#howItWorks">How it Works</a></li>
         <li><a href="/#whyGive">Why Give?</a></li>
         <li><a href="/profiles">Profiles</a></li>
       </ul>
@@ -35,6 +36,15 @@
         <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login">Login</button>
         <li role="separator" class="divider"></li>
         <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#signUp">Sign Up</button>
+      <% } else if(currentUser.email == 'email@email.com') { %>
+        <form method="GET" action="/auth/logout">
+          <p class="navbar-text">Hi <%= currentUser.firstName %></p>
+          <a href="/admin" class="btn btn-default navbar-btn
+        " role="button">Add Profile</a>
+          <a href="/myaccount" class="btn btn-default navbar-btn
+        " role="button">Your Account</a>
+          <button type="submit" class="btn btn-default navbar-btn">Logout</button>
+        </form>
       <% } else { %>
         <form method="GET" action="/auth/logout">
           <p class="navbar-text">Hi <%= currentUser.firstName %></p>

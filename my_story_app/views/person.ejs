@@ -1,23 +1,32 @@
 <% include partials/header.ejs %>
 
-<div class="container">
-  
-    <div class="thumbnail">
-      <img src="<%= profile.image %>" class="profileImage">
-      <h2 class="text-center"><%= profile.firstname + ' ' + profile.lastname %></h2>
-      <p>"<%= profile.info %>"</p>
-
-      <h2 class="text-center">Needs</h2>
-
-      <% needs.forEach(function(needs, index) { %>
-      <div class="well">
-        <h3><%= needs.need %></h3>
-        <p>Cost: <%= needs.cost %></p>
-        <a class="btn btn-primary btn-lg pull-right" id="customButton" role="button">Contribute</a>
-      </div>
-      <% }); %>
+<div class="container" id="personBackground"> 
+  <div class="row jumbotron">
+    <div class="col-md-4 thumbnail">
+      <img src="<%= profile.image %>" class="personImage">
     </div>
-  
+    <div class"col-md-8">
+      <h2 class="text-left"><%= profile.firstname + ' ' + profile.lastname %></h2>
+      <p class="text-left">"<%= profile.info %>"</p>
+    </div>
+  </div>
+  <div class="row" id="personNeeds">
+    <h2 class="cinzel text-center">Needs</h2><hr>
+  </div>
+    <% needs.forEach(function(needs, index) { %>
+  <div class="col-md-4">
+  <div class="well text-center">
+    
+      <h4><%= needs.need %></h4>
+      <p>Cost: $<%= needs.cost %></p>
+      <% if(currentUser){ %>
+      <a class="btn btn-primary btn-md pull-center" id="customButton" role="button">Contribute</a>
+      <% } else { %>
+      <a class="btn btn-primary btn-md pull-center" id="notButton" role="button">Contribute</a>
+      <% } %>
+  </div> 
+  </div> 
+    <% }); %> 
 </div>
 
 <% include partials/footer.ejs %>

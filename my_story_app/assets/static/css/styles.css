@@ -17,6 +17,10 @@ body {
   padding-top: 40px;
 }
 
+#whyGiveHeader {
+  padding-bottom: 20px;
+}
+
 #profilesBackground {
   background-color: #F2E2DC;
   padding-top: 20px;
@@ -24,18 +28,21 @@ body {
   margin-top: 0;
 }
 
-#myAccountBackground {
-  background-color: #F2E2DC;
+#myAccount {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #F2E2DC;
 }
 
 #add {
   padding-bottom: 100px;
-
 }
 
-.row-eq-height {
+#editContainer {
+  margin-bottom: 100px;
+}
+
+.equal {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -53,6 +60,15 @@ body {
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.personImage {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  background-color: #F2E2DC
 }
 
 #footer {
