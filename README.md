@@ -13,6 +13,10 @@ HTML5, CSS3, Bootstrap, Javascript, JQuery
 
 ## Project 2: Story Matters App
 
+<b>Link</b>
+
+https://storymatters.herokuapp.com/
+
 <b>Technologies Used:</b>
 
 HTML5, CSS3, Bootstrap, Javascript, JQuery, ExpressJS, NodeJS, Sequelize, Postgres
