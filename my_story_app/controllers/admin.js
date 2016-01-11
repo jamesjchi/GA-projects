@@ -42,26 +42,30 @@ router.get('/editProfile/:id', function(req, res) {
   });
 });
 
-router.get('/editProfile', function(req, res) {
+router.put('/editProfile', function(req, res) {
 
-  var id = req.query.id;
+  var id = req.body.id;
 
   var updatedProfile = {
-    firstName: req.query.firstname,
-    lastName: req.query.lastname,
-    image: req.query.image,
-    info: req.query.info
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    image: req.body.image,
+    info: req.body.info
   }
 
-  var updatedNeed = {
-    need: req.query.need,
-    cost: req.query.cost
-  }
+  // var updatedNeed = {
+  //   need: req.body.need,
+  //   cost: req.body.cost
+  // }
 
-  db.profile.update(updatedProfile, {where: {id: id}}).then(function() {
-    // db.need.update(updatedNeed, {where: {profileId: id}})
-    req.flash('success', 'You edited a profile.');
-    res.redirect('/admin');
+  db.profile.find({where : {id : id}}).then(function(person){
+    person.updateAttributes(updatedProfile)
+    .then(function(){
+      // db.need.update(updatedNeed, {where: {profileId: id}})
+      req.flash('success', 'You edited a profile.');
+      res.send(200)
+    })
+
   });
 
 });

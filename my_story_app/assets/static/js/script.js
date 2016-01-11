@@ -50,26 +50,23 @@ function deleteProfile(profileId) {
 }
 
 // Edit profile
-$('.edit-btn').click(function(e) {
-  window.location = '/admin/editProfile/' + $(this).parent().attr('id');
-});
+$(document).ready(function(){
+  $('#update-form').submit(function(e) {
+    e.preventDefault();
 
-$('#update-form').submit(function(e) {
-  e.preventDefault();
+    var myData = $(this).serialize();
 
-  var myUrl = $(this).attr('action');
-  var myData = $(this).serialize();
-
-  $.ajax({
-    method: 'GET',
-    url: '/admin/editProfile',
-    data: myData,
-    success: function() {
-      window.location = '/admin'
-    },
-    error: function(err) {
-      console.log(err);
-    }
+    $.ajax({
+      method: 'PUT',
+      url: '/admin/editProfile',
+      data: myData,
+      success: function() {
+        window.location = '/admin'
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
   });
 });
 
